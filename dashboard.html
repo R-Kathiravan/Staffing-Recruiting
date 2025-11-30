@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Dashboard || Stackly Jobs</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <header class="dash-header">
+        <div class="container-fluid">
+            <div class="dash-header-inner">
+                <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                <div class="user-menu">
+                    <div class="notification-bell">🔔 <span class="dot"></span></div>
+                    <div class="user-profile-dropdown">
+                        <div class="avatar">U</div>
+                        <span class="name">User</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+
+        <aside class="dash-sidebar">
+            <nav class="dash-nav">
+                <ul>
+                    <li><a href="#" class="active"><span class="icon">📊</span> Overview</a></li>
+                    <li><a href="404page.html"><span class="icon">💼</span> My Applications</a></li>
+                    <li><a href="404page.html"><span class="icon">❤️</span> Saved Jobs</a></li>
+                    <li><a href="404page.html"><span class="icon">📄</span> My Resume</a></li>
+                    <li><a href="404page.html"><span class="icon">🔔</span> Job Alerts</a></li>
+                    <li><a href="404page.html"><span class="icon">⚙️</span> Settings</a></li>
+                    <li class="logout"><a href="index.html"><span class="icon">🚪</span> Logout</a></li>
+                </ul>
+            </nav>
+
+            <div class="profile-strength">
+                <div class="strength-header">
+                    <span>Profile Strength</span>
+                    <span class="percent">80%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="fill" style="width: 80%"></div>
+                </div>
+                <a href="404page.html" class="btn-text-sm">Complete Profile →</a>
+            </div>
+        </aside>
+
+        <main class="dash-content">
+
+            <div class="welcome-box">
+                <h1>Hello, User! 👋</h1>
+                <p>Here is what's happening with your job applications today.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card blue">
+                    <div class="stat-icon">📝</div>
+                    <div class="stat-info">
+                        <h3>12</h3>
+                        <p>Total Applied</p>
+                    </div>
+                </div>
+                <div class="stat-card yellow">
+                    <div class="stat-icon">👀</div>
+                    <div class="stat-info">
+                        <h3>5</h3>
+                        <p>Reviewed</p>
+                    </div>
+                </div>
+                <div class="stat-card green">
+                    <div class="stat-icon">🎤</div>
+                    <div class="stat-info">
+                        <h3>2</h3>
+                        <p>Interviews</p>
+                    </div>
+                </div>
+                <div class="stat-card purple">
+                    <div class="stat-icon">📩</div>
+                    <div class="stat-info">
+                        <h3>0</h3>
+                        <p>Offers</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dash-row">
+                <div class="dash-widget table-widget">
+                    <div class="widget-header">
+                        <h2>Recent Applications</h2>
+                        <a href="404page.html">View All</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="app-table">
+                            <thead>
+                                <tr>
+                                    <th>Job Title</th>
+                                    <th>Company</th>
+                                    <th>Date Applied</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dashboard-app-list">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="dash-widget suggested-widget">
+                    <div class="widget-header">
+                        <h2>Jobs for You</h2>
+                    </div>
+                    <div class="suggested-list">
+                        <div class="suggested-item">
+                            <div class="s-logo">G</div>
+                            <div class="s-info">
+                                <h4>UX Designer</h4>
+                                <p>Google • Remote</p>
+                            </div>
+                        </div>
+                        <div class="suggested-item">
+                            <div class="s-logo">S</div>
+                            <div class="s-info">
+                                <h4>Product Mgr</h4>
+                                <p>Spotify • UK</p>
+                            </div>
+                        </div>
+                        <div class="suggested-item">
+                            <div class="s-logo">N</div>
+                            <div class="s-info">
+                                <h4>DevOps Eng</h4>
+                                <p>Netflix • USA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+         document.addEventListener("DOMContentLoaded", () => {
+            renderDashboardApplications();
+        });
+     
+        const myApplications = [
+            { title: "Senior UI/UX Designer", company: "TCS", date: "Oct 24, 2024", status: "Interview", statusClass: "interview" },
+            { title: "Frontend Developer", company: "Airbnb", date: "Oct 22, 2024", status: "Reviewing", statusClass: "review" },
+            { title: "Product Manager", company: "Spotify", date: "Oct 20, 2024", status: "Applied", statusClass: "active" },
+            { title: "Marketing Specialist", company: "Amazon", date: "Oct 15, 2024", status: "Rejected", statusClass: "reject" },
+        ];
+
+        function renderDashboardApplications() {
+            const container = document.getElementById('dashboard-app-list');
+            if (!container) return; // Only run on dashboard page
+
+            let html = '';
+            myApplications.forEach(app => {
+                html += `
+            <tr>
+                <td style="font-weight:600;">${app.title}</td>
+                <td style="color:#6B7280;">${app.company}</td>
+                <td>${app.date}</td>
+                <td><span class="status-badge ${app.statusClass}">${app.status}</span></td>
+                <td><button class="action-btn">⋮</button></td>
+            </tr>
+        `;
+            });
+            container.innerHTML = html;
+        }
+    </script>
+</body>
+
+</html>

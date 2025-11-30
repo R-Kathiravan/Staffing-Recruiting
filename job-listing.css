@@ -1,0 +1,156 @@
+.listing-hero-section {
+    background: #F3F4F6;
+    padding: 50px 0;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.listing-hero-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listing-hero-text h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.listing-hero-text p {
+    color: #6B7280;
+}
+
+.listing-hero-decoration {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    border: 1px solid #E5E7EB;
+    color: #4B5563;
+}
+
+.listing-section {
+    padding: 50px 0;
+    background: #F9FAFB;
+    min-height: 100vh;
+}
+
+.row-listing {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+@media (max-width:678px) {
+    .row-listing {
+        flex-direction: column;
+    }
+
+    .job-card-left {
+        flex-direction: column;
+    }
+
+    .job-meta {
+        flex-direction: column;
+    }
+}
+
+/* SIDEBAR */
+.sidebar {
+    flex: 1;
+    /* Takes up 1 part of width */
+    max-width: 300px;
+    background: white;
+    padding: 25px;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+}
+
+.filter-widget {
+    margin-bottom: 30px;
+}
+
+.filter-widget h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.search-input input,
+.form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.check-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--text-gray);
+    cursor: pointer;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/* MAIN FEED */
+.job-feed {
+    flex: 3;
+    /* Takes up 3 parts of width */
+}
+
+.feed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.feed-header h2 {
+    font-size: 18px;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.page-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #E5E7EB;
+    background: white;
+    color: var(--text-dark);
+    border-radius: 8px;
+    /* Rounded squares */
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.page-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.page-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.page-btn:disabled {
+    background: #F3F4F6;
+    color: #9CA3AF;
+    cursor: not-allowed;
+    border-color: #E5E7EB;
+}

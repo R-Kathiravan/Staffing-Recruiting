@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job || Stackly Jobs</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="post-job.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                </a>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="job-listing.html">Find Jobs</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <div class="mobile-login">
+                            <a href="login-signup.html" class="btn btn-text">Login</a>
+                            <a href="post-job.html" class="btn btn-primary">Post a Job</a>
+                        </div>
+                        <div class="btn-close"><span class="material-icons">close</span></div>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="login-signup.html" class="btn btn-text">Login</a>
+                    <a href="post-job.html" class="btn btn-primary active">Post a Job</a>
+                </div>
+                <div class="hamburger">
+                    <span class="material-icons">menu</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="inner-hero-section">
+        <div class="bg-overlay"></div>
+
+        <div class="container">
+            <div class="inner-hero-content" data-aos="zoom-in">
+                <div class="hero-breadcrumb">
+                    <a href="index.html">Home</a> / <span>Post Job</span>
+                </div>
+                <h1>Post a New Job</h1>
+                <p>Reach thousands of developers and designers in minutes.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <main class="form-page-section">
+        <div class="container">
+            <form class="job-form" id="create-job-form" novalidate onsubmit="handlePostJob(event)">
+
+                <div class="form-card" data-aos="fade-up">
+                    <h3>1. Job Details</h3>
+                    <div class="form-row">
+                        <div class="form-group col-2">
+                            <label>Job Title*</label>
+                            <input type="text" id="job-title" placeholder="e.g. Senior Product Designer" required>
+                            <div class="error-msg"></div>
+                        </div>
+                        <div class="form-group col-2">
+                            <label>Job Category</label>
+                            <select id="job-category">
+                                <option value="Development">Development</option>
+                                <option value="Design">Design</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Finance">Finance</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-3">
+                            <label>Job Type</label>
+                            <select id="job-type">
+                                <option value="Full Time">Full Time</option>
+                                <option value="Part Time">Part Time</option>
+                                <option value="Contract">Contract</option>
+                                <option value="Freelance">Freelance</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-3">
+                            <label>Work Mode</label>
+                            <select id="work-mode">
+                                <option value="Remote">Remote</option>
+                                <option value="On-Site">On-Site</option>
+                                <option value="Hybrid">Hybrid</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-3">
+                            <label>Experience Level</label>
+                            <select id="experience">
+                                <option value="Junior">Junior</option>
+                                <option value="Mid-Level">Mid-Level</option>
+                                <option value="Senior">Senior</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-card" data-aos="fade-down">
+                    <h3>2. Description & Requirements</h3>
+                    <div class="form-group">
+                        <label>Job Description*</label>
+                        <textarea id="job-desc" rows="8" placeholder="Describe the role..." required></textarea>
+                        <div class="error-msg"></div>
+                        <span class="hint">Markdown is supported.</span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-2">
+                            <label>Salary Range (Min)</label>
+                            <input type="number" id="salary-min" placeholder="e.g. 80000">
+                            <div class="error-msg"></div>
+                        </div>
+                        <div class="form-group col-2">
+                            <label>Salary Range (Max)</label>
+                            <input type="number" id="salary-max" placeholder="e.g. 120000">
+                            <div class="error-msg"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Application Deadline*</label>
+                        <input type="date" id="deadline" required>
+                        <div class="error-msg"></div>
+                    </div>
+                </div>
+
+                <div class="form-card" data-aos="zoom-in">
+                    <h3>3. Company Information</h3>
+                    <div class="form-row">
+                        <div class="form-group col-2">
+                            <label>Company Name*</label>
+                            <input type="text" id="company-name" placeholder="Company Name" required>
+                            <div class="error-msg"></div>
+                        </div>
+                        <div class="form-group col-2">
+                            <label>Website</label>
+                            <input type="url" id="company-website" placeholder="https://">
+                            <div class="error-msg"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Company Logo</label>
+                        <div class="file-upload-box" id="drop-zone">
+                            <input type="file" id="logo-upload" accept="image/png, image/jpeg">
+                            <p>Drag and drop logo here, or <span class="highlight">browse</span></p>
+                            <span class="hint">JPG, PNG only. Max 2MB.</span>
+                        </div>
+                        <div class="error-msg" id="file-error"></div>
+                    </div>
+                </div>
+
+                <div class="form-actions" data-aos="fade">
+                    <button type="submit" class="btn btn-primary btn-lg">Publish Job</button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" data-aos="fade" data-aos-delay="100">
+                    <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                    <p>The best place to find your next career move.</p>
+                </div>
+                <div class="footer-col" data-aos="fade" data-aos-delay="200">
+                    <h4>For Candidates</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="job-detail.html">Find Jobs</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact </a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade" data-aos-delay="300">
+                    <h4>For Employers</h4>
+                    <ul>
+                        <li><a href="post-job.html">Post a Job</a></li>
+                        <li><a href="employer-dashboard.html">Employer Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade" data-aos-delay="400">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="404page.html">Privacy Policy</a></li>
+                        <li><a href="404page.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Stackly Jobs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, offset: 50, once: true });
+    </script>
+    <script src="script.js"></script>
+    <script>
+        function handlePostJob(event) {
+            event.preventDefault(); // Stop form submission
+
+            // 1. Clear previous errors
+            document.querySelectorAll('.error-msg').forEach(el => {
+                el.style.display = 'none';
+                el.innerText = '';
+            });
+            document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+
+            let isValid = true;
+
+            // --- Helper Function to show error ---
+            const showError = (id, message) => {
+                const input = document.getElementById(id);
+                const errorDiv = input.nextElementSibling; // The <div class="error-msg">
+
+                input.classList.add('error');
+                if (errorDiv && errorDiv.classList.contains('error-msg')) {
+                    errorDiv.innerText = message;
+                    errorDiv.style.display = 'block';
+                }
+                isValid = false;
+            };
+
+            // --- VALIDATION RULES ---
+
+            // 1. Required Text Fields
+            const requiredFields = [
+                { id: 'job-title', msg: 'Job Title is required.' },
+                { id: 'job-desc', msg: 'Description is required.' },
+                { id: 'company-name', msg: 'Company Name is required.' },
+                { id: 'deadline', msg: 'Application deadline is required.' }
+            ];
+
+            requiredFields.forEach(field => {
+                const el = document.getElementById(field.id);
+                if (!el.value.trim()) {
+                    showError(field.id, field.msg);
+                }
+            });
+
+            // 2. Date Validation (Must be future date)
+            const dateInput = document.getElementById('deadline');
+            if (dateInput.value) {
+                const selectedDate = new Date(dateInput.value);
+                const today = new Date();
+                today.setHours(0, 0, 0, 0); // Ignore time part
+
+                if (selectedDate < today) {
+                    showError('deadline', 'Deadline cannot be in the past.');
+                }
+            }
+
+            // 3. Salary Validation (Min cannot be greater than Max)
+            const minSalary = document.getElementById('salary-min').value;
+            const maxSalary = document.getElementById('salary-max').value;
+
+            if (minSalary && maxSalary) {
+                if (parseFloat(minSalary) > parseFloat(maxSalary)) {
+                    showError('salary-min', 'Min salary cannot be higher than Max.');
+                }
+            }
+
+            // 4. URL Validation
+            const website = document.getElementById('company-website');
+            if (website.value) {
+                // Simple regex for URL
+                const urlPattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+                if (!urlPattern.test(website.value)) {
+                    showError('company-website', 'Please enter a valid URL (e.g. https://example.com)');
+                }
+            }
+
+            // 5. File Validation (Size & Type)
+            const fileInput = document.getElementById('logo-upload');
+            const fileError = document.getElementById('file-error');
+            const fileBox = document.querySelector('.file-upload-box');
+
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const fileSizeMB = file.size / 1024 / 1024;
+                const validTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+
+                if (fileSizeMB > 2) {
+                    fileBox.classList.add('error');
+                    fileError.innerText = "File size exceeds 2MB limit.";
+                    fileError.style.display = 'block';
+                    isValid = false;
+                } else if (!validTypes.includes(file.type)) {
+                    fileBox.classList.add('error');
+                    fileError.innerText = "Only JPG and PNG files are allowed.";
+                    fileError.style.display = 'block';
+                    isValid = false;
+                }
+            }
+
+            // --- FINAL CHECK ---
+            if (isValid) {
+                const btn = document.querySelector('button[type="submit"]');
+                btn.innerText = "Posting...";
+                btn.disabled = true;
+
+                // Simulate API call
+                setTimeout(() => {
+                    alert("Success! Job has been validated and posted.");
+                    window.location.href = "404page.html"; // Redirect
+                }, 1500);
+            } else {
+                // Scroll to the first error
+                const firstError = document.querySelector('.error');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details || Stackly Jobs</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="job-detail.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                </a>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="job-listing.html" class="active">Find Jobs</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <div class="mobile-login">
+                            <a href="login-signup.html" class="btn btn-text">Login</a>
+                            <a href="post-job.html" class="btn btn-primary">Post a Job</a>
+                        </div>
+                        <div class="btn-close"><span class="material-icons">close</span></div>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="login-signup.html" class="btn btn-text">Login</a>
+                    <a href="post-job.html" class="btn btn-primary">Post a Job</a>
+                </div>
+                <div class="hamburger">
+                    <span class="material-icons">menu</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="job-header-section">
+        <div class="container">
+            <div class="job-header-inner">
+                <div class="job-header-main">
+                    <div class="detail-logo" id="detail-logo">G</div>
+                    <div class="job-header-text">
+                        <h1 id="detail-title">Loading Job...</h1>
+                        <div class="job-header-meta">
+                            <span class="company" id="detail-company"></span>
+                            <span class="location">📍 <span id="detail-location">...</span></span>
+                            <span class="type badge" id="detail-type">...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="job-header-action">
+                    <button class="btn btn-primary btn-lg" onclick="window.location.href='404page.html'">Apply
+                        Now</button>
+                    <!-- <button class="btn btn-save">♡</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="job-content-section">
+        <div class="container">
+            <div class="row">
+
+                <div class="content-left">
+                    <div class="content-block">
+                        <h3>Job Description</h3>
+                        <p id="detail-desc">Loading...</p>
+                    </div>
+
+                    <div class="content-block">
+                        <h3>Key Requirements</h3>
+                        <ul class="detail-list" id="detail-req"></ul>
+                    </div>
+
+                    <div class="content-block">
+                        <h3>Benefits & Perks</h3>
+                        <ul class="detail-list" id="detail-ben"></ul>
+                    </div>
+                </div>
+
+                <div class="content-right">
+
+                    <div class="sidebar-widget">
+                        <h3>Job Overview</h3>
+                        <ul class="overview-list">
+                            <li>
+                                <span class="label">Posted:</span>
+                                <strong id="detail-posted">...</strong>
+                            </li>
+                            <li>
+                                <span class="label">Deadline:</span>
+                                <strong id="detail-deadline" style="color:#DC2626">...</strong>
+                            </li>
+                            <li>
+                                <span class="label">Category:</span>
+                                <strong id="detail-category">...</strong>
+                            </li>
+                            <li>
+                                <span class="label">Openings:</span>
+                                <strong id="detail-openings">...</strong>
+                            </li>
+                            <li>
+                                <span class="label">Work Mode:</span>
+                                <strong id="detail-workmode">...</strong>
+                            </li>
+                            <li>
+                                <span class="label">Salary:</span>
+                                <strong id="detail-salary">...</strong>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>Education</h3>
+                        <p id="detail-education" style="color: var(--text-dark); font-weight: 500;">...</p>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>Required Skills</h3>
+                        <div class="skills-wrapper" id="detail-skills">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" data-aos="fade" data-aos-delay="100">
+                    <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                    <p>The best place to find your next career move.</p>
+                </div>
+                <div class="footer-col" data-aos="fade" data-aos-delay="200">
+                    <h4>For Candidates</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="job-detail.html">Find Jobs</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact </a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade" data-aos-delay="300">
+                    <h4>For Employers</h4>
+                    <ul>
+                        <li><a href="post-job.html">Post a Job</a></li>
+                        <li><a href="employer-dashboard.html">Employer Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade" data-aos-delay="400">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="404page.html">Privacy Policy</a></li>
+                        <li><a href="404page.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Stackly Jobs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, offset: 50,once:true });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

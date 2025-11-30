@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication || Stackly Jobs</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login-signup.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                </a>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="job-listing.html">Find Jobs</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <div class="mobile-login">
+                            <a href="login-signup.html" class="btn btn-text">Login</a>
+                            <a href="post-job.html" class="btn btn-primary">Post a Job</a>
+                        </div>
+                        <div class="btn-close"><span class="material-icons">close</span></div>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="login-signup.html" class="btn btn-text active">Login</a>
+                    <a href="post-job.html" class="btn btn-primary">Post a Job</a>
+                </div>
+                <div class="hamburger">
+                    <span class="material-icons">menu</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="auth-section">
+        <div class="auth-container">
+
+            <div class="auth-mode-tabs">
+                <button class="mode-btn active" id="tab-login" onclick="toggleAuthMode('login')">Sign In</button>
+                <button class="mode-btn" id="tab-register" onclick="toggleAuthMode('register')">Sign Up</button>
+            </div>
+
+            <div class="auth-header">
+                <h1 id="auth-title">Welcome Back</h1>
+                <p id="auth-desc">Login to manage your career.</p>
+            </div>
+
+            <div class="auth-role-switch">
+                <label>I am a:</label>
+                <div class="role-group">
+                    <label class="radio-label">
+                        <input type="radio" name="role" value="candidate" checked>
+                        <span>Candidate</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="role" value="employer">
+                        <span>Employer</span>
+                    </label>
+                </div>
+            </div>
+
+            <form id="login-form" class="auth-form active" novalidate onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="login-email" placeholder="name@example.com" required>
+                    <div class="error-msg"></div>
+                </div>
+                <div class="form-group">
+                    <div class="label-row">
+                        <label>Password</label>
+                        <a href="#" class="forgot-link">Forgot?</a>
+                    </div>
+                    <input type="password" id="login-pass" placeholder="••••••••" required>
+                    <div class="error-msg"></div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 btn-lg">Login</button>
+            </form>
+
+            <form id="register-form" class="auth-form" novalidate onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="reg-name" placeholder="John Doe" required>
+                    <div class="error-msg"></div>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="reg-email" placeholder="name@example.com" required>
+                    <div class="error-msg"></div>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="reg-pass" placeholder="Create a password (min 6 chars)" required>
+                    <div class="error-msg"></div>
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="reg-confirm" placeholder="Repeat password" required>
+                    <div class="error-msg"></div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 btn-lg">Create Account</button>
+            </form>
+
+            <div class="auth-divider"><span>Or continue with</span></div>
+            <div class="social-login">
+                <a href="404page.html" class="btn-social google"><span class="icon">G</span> Google</a>
+                <a href="404page.html" class="btn-social linkedin"><span class="icon">in</span> LinkedIn</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                    <p>The best place to find your next career move.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>For Candidates</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="job-detail.html">Find Jobs</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact </a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>For Employers</h4>
+                    <ul>
+                        <li><a href="post-job.html">Post a Job</a></li>
+                        <li><a href="employer-dashboard.html">Employer Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Stackly Jobs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, offset: 50 });
+    </script>
+    <script src="script.js"></script>
+    <script>
+        function toggleAuthMode(mode) {
+            // 1. Toggle Tabs
+            document.getElementById('tab-login').classList.toggle('active', mode === 'login');
+            document.getElementById('tab-register').classList.toggle('active', mode === 'register');
+
+            // 2. Toggle Forms
+            document.getElementById('login-form').style.display = (mode === 'login') ? 'block' : 'none';
+            document.getElementById('register-form').style.display = (mode === 'register') ? 'block' : 'none';
+
+            // 3. Update Text
+            if (mode === 'login') {
+                document.getElementById('auth-title').innerText = "Welcome Back";
+                document.getElementById('auth-desc').innerText = "Login to manage your career.";
+            } else {
+                document.getElementById('auth-title').innerText = "Create Account";
+                document.getElementById('auth-desc').innerText = "Join thousands of professionals today.";
+            }
+        }
+
+        // Initialize view
+        toggleAuthMode('login');
+
+        /* ==========================
+   HELPER: SHOW ERROR
+=========================== */
+        function showError(input, message) {
+            const errorDiv = input.nextElementSibling; // The div below the input
+            if (errorDiv && errorDiv.classList.contains('error-msg')) {
+                input.classList.add('error');
+                errorDiv.innerText = message;
+                errorDiv.style.display = 'block';
+            }
+        }
+
+        /* ==========================
+           HELPER: CLEAR ERRORS
+        =========================== */
+        function clearErrors(formId) {
+            const form = document.getElementById(formId);
+            const inputs = form.querySelectorAll('input');
+            const msgs = form.querySelectorAll('.error-msg');
+
+            inputs.forEach(input => input.classList.remove('error'));
+            msgs.forEach(msg => {
+                msg.style.display = 'none';
+                msg.innerText = '';
+            });
+        }
+
+        /* ==========================
+           HELPER: EMAIL VALIDATION REGEX
+        =========================== */
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        /* ==========================
+           1. HANDLE LOGIN
+        =========================== */
+        function handleLogin(e) {
+            e.preventDefault();
+            clearErrors('login-form');
+
+            const emailInput = document.getElementById('login-email');
+            const passInput = document.getElementById('login-pass');
+            let isValid = true;
+
+            // Check Email
+            if (!emailInput.value.trim()) {
+                showError(emailInput, "Email is required");
+                isValid = false;
+            } else if (!isValidEmail(emailInput.value)) {
+                showError(emailInput, "Please enter a valid email address");
+                isValid = false;
+            }
+
+            // Check Password
+            if (!passInput.value.trim()) {
+                showError(passInput, "Password is required");
+                isValid = false;
+            }
+
+            if (isValid) {
+                const btn = e.target.querySelector('button');
+                btn.innerText = "Verifying...";
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    //  const role = document.querySelector('input[name="role"]:checked').value;
+                    // const target = role === 'employer' ? 'employer-dashboard.html' : 'dashboard.html';
+
+                    window.location.href = '404page.html';
+                }, 1500);
+            }
+        }
+
+        /* ==========================
+           2. HANDLE REGISTER
+        =========================== */
+        function handleRegister(e) {
+            e.preventDefault();
+            clearErrors('register-form');
+
+            const nameInput = document.getElementById('reg-name');
+            const emailInput = document.getElementById('reg-email');
+            const passInput = document.getElementById('reg-pass');
+            const confirmInput = document.getElementById('reg-confirm');
+            let isValid = true;
+
+            // Check Name
+            if (nameInput.value.trim().length < 3) {
+                showError(nameInput, "Full name must be at least 3 characters");
+                isValid = false;
+            }
+
+            // Check Email
+            if (!isValidEmail(emailInput.value)) {
+                showError(emailInput, "Please enter a valid email address");
+                isValid = false;
+            }
+
+            // Check Password Length
+            if (passInput.value.length < 6) {
+                showError(passInput, "Password must be at least 6 characters");
+                isValid = false;
+            }
+
+            // Check Password Match
+            if (passInput.value !== confirmInput.value) {
+                showError(confirmInput, "Passwords do not match");
+                isValid = false;
+            }
+
+            if (isValid) {
+                const btn = e.target.querySelector('button');
+                btn.innerText = "Creating Account...";
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    alert("Account Created Successfully!");
+                    toggleAuthMode('login');
+                }, 1500);
+            }
+        }
+    </script>
+</body>
+
+</html>

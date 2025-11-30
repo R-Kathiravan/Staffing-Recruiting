@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Dashboard || Stackly Jobs</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <header class="dash-header">
+        <div class="container-fluid">
+            <div class="dash-header-inner">
+                <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+
+                <div class="user-menu">
+                    <a href="post-job.html" class="btn btn-primary btn-sm" style="margin-right:20px;">+ Post Job</a>
+                    <div class="notification-bell">🔔 <span class="dot"></span></div>
+                    <div class="user-profile-dropdown">
+                        <div class="avatar" style="background:#4F46E5">TC</div> <span class="name">Tech Corp HR</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+
+        <aside class="dash-sidebar">
+            <nav class="dash-nav">
+                <ul>
+                    <li><a href="#" class="active"><span class="icon">📊</span> Dashboard</a></li>
+                    <li><a href="404page.html"><span class="icon">📢</span> Manage Jobs</a></li>
+                    <li><a href="404page.html"><span class="icon">👥</span> All Applicants</a></li>
+                    <li><a href="404page.html"><span class="icon">💳</span> Subscription</a></li>
+                    <li><a href="404page.html"><span class="icon">🏢</span> Company Profile</a></li>
+                    <li><a href="404page.html"><span class="icon">⚙️</span> Settings</a></li>
+                    <li class="logout"><a href="index.html"><span class="icon">🚪</span> Logout</a></li>
+                </ul>
+            </nav>
+
+            <div class="profile-strength">
+                <div class="strength-header">
+                    <span>Current Plan</span>
+                    <span class="percent" style="color:var(--primary-color)">Pro</span>
+                </div>
+                <p style="font-size:13px; color:#6B7280; margin-bottom:10px;">5 Jobs remaining this month.</p>
+                <a href="#" class="btn-text-sm">Upgrade Plan →</a>
+            </div>
+        </aside>
+
+        <main class="dash-content">
+
+            <div class="welcome-box">
+                <h1>Employer Overview</h1>
+                <p>Manage your hiring pipeline and active job listings.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card blue">
+                    <div class="stat-icon">📢</div>
+                    <div class="stat-info">
+                        <h3>8</h3>
+                        <p>Active Jobs</p>
+                    </div>
+                </div>
+                <div class="stat-card green">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-info">
+                        <h3>142</h3>
+                        <p>Total Applicants</p>
+                    </div>
+                </div>
+                <div class="stat-card yellow">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-info">
+                        <h3>12</h3>
+                        <p>Interviews Set</p>
+                    </div>
+                </div>
+                <div class="stat-card purple">
+                    <div class="stat-icon">👁️</div>
+                    <div class="stat-info">
+                        <h3>2.4k</h3>
+                        <p>Total Views</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dash-row">
+
+                <div class="dash-widget table-widget">
+                    <div class="widget-header">
+                        <h2>Newest Applicants</h2>
+                        <a href="404page.html">View All Candidates</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="app-table">
+                            <thead>
+                                <tr>
+                                    <th>Candidate</th>
+                                    <th>Applied For</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="employer-applicant-list">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="dash-widget" style="margin-top: 30px;">
+                <div class="widget-header">
+                    <h2>Your Active Jobs</h2>
+                    <a href="post-job.html">Post New</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="app-table">
+                        <thead>
+                            <tr>
+                                <th>Job Title</th>
+                                <th>Applications</th>
+                                <th>Status</th>
+                                <th>Expires</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Senior UI/UX Designer</strong></td>
+                                <td>
+                                    <div class="avatar-group">45 Applicants</div>
+                                </td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>Oct 30, 2025</td>
+                                <td><button class="action-btn">Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Frontend Developer</strong></td>
+                                <td>
+                                    <div class="avatar-group">12 Applicants</div>
+                                </td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>Nov 15, 2025</td>
+                                <td><button class="action-btn">Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Marketing Intern</strong></td>
+                                <td>
+                                    <div class="avatar-group">85 Applicants</div>
+                                </td>
+                                <td><span class="status-badge reject">Closed</span></td>
+                                <td>Expired</td>
+                                <td><button class="action-btn">Relist</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- <script src="js/main.js"></script> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            renderEmployerApplicants();
+        });
+        /* ==========================
+   EMPLOYER DASHBOARD LOGIC
+=========================== */
+        const recentApplicants = [
+            { name: "Sarah Jenkins", role: "Senior UI/UX Designer", date: "Just now", status: "New", statusClass: "active" },
+            { name: "Mike Ross", role: "Frontend Developer", date: "2 hours ago", status: "Pending", statusClass: "review" },
+            { name: "Jessica Pearson", role: "Product Manager", date: "Yesterday", status: "Interview", statusClass: "interview" },
+            { name: "Harvey Specter", role: "Legal Consultant", date: "2 days ago", status: "Rejected", statusClass: "reject" },
+        ];
+
+        function renderEmployerApplicants() {
+            const container = document.getElementById('employer-applicant-list');
+            if (!container) return;
+
+            let html = '';
+            recentApplicants.forEach(app => {
+                html += `
+            <tr>
+                <td>
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <div class="avatar" style="width:30px; height:30px; font-size:12px;">${app.name.charAt(0)}</div>
+                        <span style="font-weight:600;">${app.name}</span>
+                    </div>
+                </td>
+                <td style="color:#6B7280;">${app.role}</td>
+                <td>${app.date}</td>
+                <td><span class="status-badge ${app.statusClass}">${app.status}</span></td>
+                <td>
+                    <button class="action-btn" title="Download CV">⬇️</button>
+                    <button class="action-btn" title="Message">✉️</button>
+                </td>
+            </tr>
+        `;
+            });
+            container.innerHTML = html;
+        }
+    </script>
+</body>
+
+</html>
