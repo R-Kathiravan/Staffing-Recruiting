@@ -1,4 +1,4 @@
- 
+
 const jobs = [
     {
         id: 1,
@@ -757,3 +757,28 @@ function initMobileMenu() {
         }
     });
 }
+
+
+const dashboardDropdownBtn = document.getElementById("dashboardDropBtn");
+const dashboardDropdown = document.getElementById("dashboardDropdown");
+const dashboardicon = document.querySelector(".dropdown-icon1");
+const dashdiv = document.querySelector(".dash-btn");
+
+function toggleDashboardDropdown() {
+    dashboardDropdown.classList.toggle("show");
+    dashboardicon.classList.toggle("rotate");
+}
+
+dashboardDropdownBtn.addEventListener("click", toggleDashboardDropdown);
+dashdiv.addEventListener("click", toggleDashboardDropdown);
+
+document.addEventListener("click", (e) => {
+    const clickedInsideDropdown = dashboardDropdown.contains(e.target);
+    const clickedInsideBtn = dashboardDropdownBtn.contains(e.target);
+    const clickedInsideDiv = dashdiv.contains(e.target);
+
+    if (!clickedInsideDropdown && !clickedInsideBtn && !clickedInsideDiv) {
+        dashboardDropdown.classList.remove("show");
+        dashboardicon.classList.remove("rotate");
+    }
+});

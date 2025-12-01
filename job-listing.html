@@ -13,20 +13,27 @@
 </head>
 
 <body>
-
     <header class="site-header">
         <div class="container">
             <div class="header-inner">
                 <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
                 </a>
-
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li class="nav-item"> <a href="index.html" class="nav-link">Home</a></li>
                         <li><a href="job-listing.html" class="active">Find Jobs</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <div class="dash-nav">
+                            <li class="nav-item"> <a class="dash-btn nav-link">Dashboard</a></li>
+                            <span class="material-icons dropdown-icon1" id="dashboardDropBtn">expand_more</span>
+                            <div class="dashboard-select" id="dashboardDropdown">
+                                <li class="nav-item"> <a href="dashboard.html" class="nav-link">Canditate Dashboard</a>
+                                </li>
+                                <li class="nav-item"> <a href="employer-dashboard.html" class="nav-link">Employer
+                                        Dashboard</a></li>
+                            </div>
+                        </div>
                         <div class="mobile-login">
                             <a href="login-signup.html" class="btn btn-text">Login</a>
                             <a href="post-job.html" class="btn btn-primary">Post a Job</a>
@@ -34,7 +41,6 @@
                         <div class="btn-close"><span class="material-icons">close</span></div>
                     </ul>
                 </nav>
-
                 <div class="header-actions">
                     <a href="login-signup.html" class="btn btn-text">Login</a>
                     <a href="post-job.html" class="btn btn-primary">Post a Job</a>
@@ -45,7 +51,6 @@
             </div>
         </div>
     </header>
-
 
     <section class="listing-hero-section">
         <div class="container">
@@ -128,7 +133,7 @@
                     <h4>For Candidates</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="job-detail.html">Find Jobs</a></li>
+                        <li><a href="job-listing.html">Find Jobs</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="contact.html">Contact </a></li>
                         <li><a href="dashboard.html">Dashboard</a></li>
@@ -158,7 +163,7 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, offset: 50,once:true });
+        AOS.init({ duration: 800, offset: 50, once: true });
     </script>
 
     <script src="script.js"></script>

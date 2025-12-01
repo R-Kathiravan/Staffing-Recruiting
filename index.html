@@ -25,19 +25,33 @@
 
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="index.html" class="active">Home</a></li>
+                        <div class="home-nav">
+                            <li class="nav-item"> <a href="index.html" class="home-btn nav-link active">Home</a></li>
+                            <span class="material-icons dropdown-icon" id="homeDropdownBtn">expand_more</span>
+                            <div class="home-select " id="homeDropdown">
+                                <li class="nav-item"> <a href="../index.html" class="nav-link">Homepage 1</a></li>
+                            </div>
+                        </div>
                         <li><a href="job-listing.html">Find Jobs</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="dashboard.html">Dashboard</a></li>
-                        <div class="mobile-login">
+                        <div class="dash-nav">
+                            <li class="nav-item"> <a class="dash-btn nav-link">Dashboard</a></li>
+                            <span class="material-icons dropdown-icon1" id="dashboardDropBtn">expand_more</span>
+                            <div class="dashboard-select" id="dashboardDropdown">
+                                <li class="nav-item"> <a href="dashboard.html" class="nav-link">Canditate Dashboard</a>
+                                </li>
+                                <li class="nav-item"> <a href="employer-dashboard.html" class="nav-link">Employer
+                                        Dashboard</a></li>
+                            </div>
+                        </div>
+                         <div class="mobile-login">
                             <a href="login-signup.html" class="btn btn-text">Login</a>
                             <a href="post-job.html" class="btn btn-primary">Post a Job</a>
                         </div>
                         <div class="btn-close"><span class="material-icons">close</span></div>
                     </ul>
                 </nav>
-
                 <div class="header-actions">
                     <a href="login-signup.html" class="btn btn-text">Login</a>
                     <a href="post-job.html" class="btn btn-primary">Post a Job</a>
@@ -251,7 +265,7 @@
                         <h4>For Candidates</h4>
                         <ul>
                             <li><a href="index.html">Home</a></li>
-                            <li><a href="job-detail.html">Find Jobs</a></li>
+                            <li><a href="job-listing.html">Find Jobs</a></li>
                             <li><a href="blog.html">Blog</a></li>
                             <li><a href="contact.html">Contact </a></li>
                             <li><a href="dashboard.html">Dashboard</a></li>
@@ -285,6 +299,20 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, offset: 50, once: true });
+        const homeDropdownBtn = document.getElementById("homeDropdownBtn");
+        const homeDropdown = document.getElementById("homeDropdown");
+        const icon = document.querySelector(".dropdown-icon");
+
+        homeDropdownBtn.addEventListener("click", () => {
+            homeDropdown.classList.toggle("show");
+            icon.classList.toggle("rotate");
+        });
+        document.addEventListener("click", (e) => {
+            if (!homeDropdown.contains(e.target) && !homeDropdownBtn.contains(e.target)) {
+                homeDropdown.classList.remove("show");
+                icon.classList.remove("rotate");
+            }
+        });
     </script>
 </body>
 

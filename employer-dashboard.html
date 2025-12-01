@@ -51,7 +51,7 @@
                     <span class="percent" style="color:var(--primary-color)">Pro</span>
                 </div>
                 <p style="font-size:13px; color:#6B7280; margin-bottom:10px;">5 Jobs remaining this month.</p>
-                <a href="#" class="btn-text-sm">Upgrade Plan →</a>
+                <a href="404page.html" class="btn-text-sm">Upgrade Plan →</a>
             </div>
         </aside>
 
@@ -143,7 +143,7 @@
                                 </td>
                                 <td><span class="status-badge active">Active</span></td>
                                 <td>Oct 30, 2025</td>
-                                <td><button class="action-btn">Edit</button></td>
+                                <td><a href="404page.html" class="action-btn">Edit</a></td>
                             </tr>
                             <tr>
                                 <td><strong>Frontend Developer</strong></td>
@@ -152,7 +152,7 @@
                                 </td>
                                 <td><span class="status-badge active">Active</span></td>
                                 <td>Nov 15, 2025</td>
-                                <td><button class="action-btn">Edit</button></td>
+                                <td><a href="404page.html" class="action-btn">Edit</a></td>
                             </tr>
                             <tr>
                                 <td><strong>Marketing Intern</strong></td>
@@ -161,7 +161,7 @@
                                 </td>
                                 <td><span class="status-badge reject">Closed</span></td>
                                 <td>Expired</td>
-                                <td><button class="action-btn">Relist</button></td>
+                                <td><a href="404page.html" class="action-btn">Relist</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -170,15 +170,11 @@
 
         </main>
     </div>
-
-    <!-- <script src="js/main.js"></script> -->
+    <script src="script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             renderEmployerApplicants();
         });
-        /* ==========================
-   EMPLOYER DASHBOARD LOGIC
-=========================== */
         const recentApplicants = [
             { name: "Sarah Jenkins", role: "Senior UI/UX Designer", date: "Just now", status: "New", statusClass: "active" },
             { name: "Mike Ross", role: "Frontend Developer", date: "2 hours ago", status: "Pending", statusClass: "review" },
@@ -204,8 +200,8 @@
                 <td>${app.date}</td>
                 <td><span class="status-badge ${app.statusClass}">${app.status}</span></td>
                 <td>
-                    <button class="action-btn" title="Download CV">⬇️</button>
-                    <button class="action-btn" title="Message">✉️</button>
+                    <a href="404page.html" class="action-btn" title="Download CV">⬇️</a>
+                    <a href="404page.html" class="action-btn" title="Message">✉️</a>
                 </td>
             </tr>
         `;
