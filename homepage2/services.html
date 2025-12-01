@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Stackly Agency</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Specific Styles for Services Page */
+        .service-hero {
+            text-align: center;
+            padding: 100px 0 150px;
+            background: #0F172A;
+        }
+
+        .service-hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+
+        /* Alternating Feature Blocks */
+        .feature-block {
+            padding: 100px 0;
+            border-bottom: 1px solid #1E293B;
+        }
+
+        .feature-block:nth-child(even) {
+            background: #020617;
+        }
+
+        .feature-block:nth-child(odd) {
+            background: #0F172A;
+        }
+
+        .feature-grid {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .feature-grid.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .feature-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .feature-content p {
+            color: #94A3B8;
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .feature-list li {
+            margin-bottom: 15px;
+            color: #CBD5E1;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            color: #FBBF24;
+            font-weight: 800;
+        }
+
+        .feature-img-box {
+            flex: 1;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #334155;
+            box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-img {
+            width: 100%;
+            display: block;
+            opacity: 0.9;
+            transition: 0.3s;
+        }
+
+        .feature-img-box:hover .feature-img {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        /* Engagement Models */
+        .engagement-section {
+            padding: 100px 0;
+            background: #1E293B;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .model-card {
+            background: #0F172A;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid #334155;
+            text-align: center;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .model-card:hover {
+            border-color: #FBBF24;
+            transform: translateY(-10px);
+        }
+
+        .model-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .model-card h3 {
+            color: white;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .model-card p {
+            color: #94A3B8;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            transform: rotate(45deg);
+            background: #FBBF24;
+            color: #0F172A;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 5px 30px;
+            width: 120px;
+            text-align: center;
+        }
+
+        @media (max-width: 900px) {
+
+            .feature-grid,
+            .feature-grid.reverse {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .model-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="agency-body">
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html" class="active">Services</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <div class="btn-close"><span class="material-icons">close</span></div>
+                        <div class="mobile-login">
+                            <a href="contact.html" class="btn btn-primary">Request Talent</a>
+                        </div>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="contact.html" class="btn btn-primary">Request Talent</a>
+                </div>
+                <div class="hamburger">
+                    <span class="material-icons">menu</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="service-hero">
+            <div class="container" data-aos="fade">
+                <span class="agency-tag">Our Solutions</span>
+                <h1>Tailored Recruitment <span class="highlight">Strategies</span></h1>
+                <p style="color:#94A3B8; font-size:18px; max-width:600px; margin:0 auto;">From rapid scaling to
+                    confidential executive searches, we have a model that fits your business needs.</p>
+            </div>
+        </section>
+
+        <section class="feature-block">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-content" style="flex:1;" data-aos="fade-up">
+                        <h2>Retained Executive Search</h2>
+                        <p>For C-Suite and VP-level roles where precision and confidentiality are paramount. We act as
+                            your brand ambassador in the market, conducting a deep-dive investigation to find leaders
+                            who align with your long-term vision.</p>
+                        <ul class="feature-list">
+                            <li>Dedicated research team for your role</li>
+                            <li>Confidential outreach to competitor leadership</li>
+                            <li>Rigorous behavioral and leadership assessments</li>
+                            <li>Replacement guarantee up to 1 year</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Start a Retained Search</a>
+                    </div>
+                    <div class="feature-img-box" data-aos="fade-down">
+                        <img src="./assets/services-hero.webp" alt="Executive Meeting" class="feature-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICE 2: CONTINGENT SEARCH -->
+        <section class="feature-block">
+            <div class="container">
+                <div class="feature-grid reverse">
+                    <div class="feature-content" style="flex:1;" data-aos="fade-down">
+                        <h2>Contingent Tech Staffing</h2>
+                        <p>Speed meets quality. Perfect for mid-to-senior engineering roles where you need talent
+                            yesterday. We utilize our database of 50,000+ pre-vetted engineers to fill positions in
+                            record time.</p>
+                        <ul class="feature-list">
+                            <li>No upfront fees – pay only upon success</li>
+                            <li>Candidates presented within 48 hours</li>
+                            <li>Specialized in React, Python, Java, and DevOps</li>
+                            <li>Contract-to-Hire options available</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Find Developers</a>
+                    </div>
+                    <div class="feature-img-box" data-aos="fade-up">
+                        <img src="./assets/services-img1.webp" alt="Coding Team" class="feature-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-block">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-content" style="flex:1;" data-aos="fade-up">
+                        <h2>RPO (Recruitment Process Outsourcing)</h2>
+                        <p>Scaling from 50 to 200 employees? Let us become your internal talent acquisition team. We
+                            embed recruiters directly into your organization to manage the entire lifecycle.</p>
+                        <ul class="feature-list">
+                            <li>Fully managed hiring pipeline</li>
+                            <li>Employer branding and career page optimization</li>
+                            <li>Fixed monthly cost + reduced placement fees</li>
+                            <li>Detailed data reporting and analytics</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Discuss RPO Solutions</a>
+                    </div>
+                    <div class="feature-img-box" data-aos="fade-down">
+                        <img src="./assets/services-img2.webp" alt="Strategy Board" class="feature-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ENGAGEMENT MODELS -->
+        <section class="engagement-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Engagement <span class="highlight">Models</span></h2>
+                    <p>Transparent pricing structures designed for flexibility.</p>
+                </div>
+
+                <div class="model-grid">
+                    <!-- Model 1 -->
+                    <div class="model-card" data-aos="fade" data-aos-delay="100">
+                        <span class="model-icon">⚡</span>
+                        <h3>Contingent</h3>
+                        <p>Best for individual contributor roles. Low risk, pay only for results.</p>
+                        <h4 style="color:white; font-size:24px; margin-bottom:20px;">20-25%</h4>
+                        <span style="color:#94A3B8; font-size:13px;">of first year salary</span>
+                    </div>
+
+                    <!-- Model 2 -->
+                    <div class="model-card" style="border-color:#FBBF24" data-aos="fade" data-aos-delay="200">
+                        <div class="popular-badge">Most Used</div>
+                        <span class="model-icon">💎</span>
+                        <h3>Container</h3>
+                        <p>Hybrid model for priority searches. Small upfront fee for dedicated focus.</p>
+                        <h4 style="color:white; font-size:24px; margin-bottom:20px;">20%</h4>
+                        <span style="color:#94A3B8; font-size:13px;">($5k retainer credited to final fee)</span>
+                    </div>
+
+                    <!-- Model 3 -->
+                    <div class="model-card" data-aos="fade" data-aos-delay="300">
+                        <span class="model-icon">🏛️</span>
+                        <h3>Retained</h3>
+                        <p>Exclusive executive search for C-Suite roles. Guaranteed delivery.</p>
+                        <h4 style="color:white; font-size:24px; margin-bottom:20px;">30%</h4>
+                        <span style="color:#94A3B8; font-size:13px;">Paid in 3 milestones</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="agency-cta">
+            <div class="container" data-aos="zoom-in">
+                <h2>Unsure which model fits?</h2>
+                <p style="color:#94A3B8; margin-bottom:30px;">Our consultants can audit your hiring needs for free.</p>
+                <a href="contact.html" class="btn btn-primary btn-lg">Book a Strategy Call</a>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                    <p>Premium recruitment agency based in Tamil Nadu.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>info@thestackly.com</li>
+                        <li>+91 98765 43210</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center" style="margin-top:40px; border-top:1px solid #374151; padding-top:20px;">&copy; 2025
+                Stackly Agency.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, offset: 50 });
+    </script>
+</body>
+
+</html>

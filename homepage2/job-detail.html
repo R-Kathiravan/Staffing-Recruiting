@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details | Stackly Agency</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* --- Details Page Specifics --- */
+        .job-hero {
+            background: #0F172A;
+            padding: 80px 0;
+            border-bottom: 1px solid #1E293B;
+        }
+
+        .job-header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .header-left {
+            display: flex;
+            gap: 30px;
+        }
+
+        .header-logo {
+            width: 100px;
+            height: 100px;
+            background: #1E293B;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 800;
+            color: #FBBF24;
+        }
+
+        .header-info h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: white;
+            line-height: 1.2;
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 20px;
+            color: #94A3B8;
+            font-size: 15px;
+        }
+
+        .header-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-meta i {
+            color: #FBBF24;
+        }
+
+        .header-right {
+            text-align: right;
+        }
+
+        .salary-tag {
+            font-size: 24px;
+            font-weight: 700;
+            color: #FBBF24;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        /* Content Area */
+        .details-layout {
+            display: flex;
+            gap: 50px;
+            padding: 80px 0;
+            align-items: flex-start;
+        }
+
+        .main-content {
+            flex: 2;
+        }
+
+        .sidebar-content {
+            flex: 1;
+            position: sticky;
+            top: 100px;
+        }
+
+        .content-card {
+            background: #1E293B;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid #334155;
+            margin-bottom: 30px;
+        }
+
+        .content-card h3 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 10px;
+        }
+
+        .content-card p {
+            color: #CBD5E1;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .req-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            color: #CBD5E1;
+        }
+
+        .req-list li::before {
+            content: "•";
+            color: #FBBF24;
+            font-weight: bold;
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* Sidebar Widgets */
+        .apply-box {
+            background: #0F172A;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #FBBF24;
+            /* Gold Border for emphasis */
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .apply-box p {
+            color: #94A3B8;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .info-widget {
+            background: #1E293B;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .info-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .label {
+            color: #94A3B8;
+        }
+
+        .value {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Badge Style */
+        .type-badge {
+            background: rgba(251, 191, 36, 0.1);
+            color: #FBBF24;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+        @media (max-width: 900px) {
+
+            .job-header-wrapper,
+            .header-left,
+            .details-layout {
+                flex-direction: column;
+            }
+
+            .header-right {
+                text-align: left;
+                margin-top: 20px;
+            }
+
+            .sidebar-content {
+                width: 100%;
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body class="agency-body">
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="careers.html" class="active">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <div class="btn-close"><span class="material-icons">close</span></div>
+                        <div class="mobile-login">
+                            <a href="contact.html" class="btn btn-primary">Request Talent</a>
+                        </div>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="contact.html" class="btn btn-primary">Request Talent</a>
+                </div>
+                <div class="hamburger">
+                    <span class="material-icons">menu</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Job Hero -->
+        <section class="job-hero">
+            <div class="container">
+                <div class="job-header-wrapper">
+                    <div class="header-left">
+                        <div class="header-logo" id="ag-job-logo">L</div>
+                        <div class="header-info">
+                            <h1 id="ag-job-title">Loading...</h1>
+                            <div class="header-meta">
+                                <span><i>🏢</i> <span id="ag-job-company">Company</span></span>
+                                <span><i>📍</i> <span id="ag-job-location">Location</span></span>
+                                <span><i>⏰</i> Posted <span id="ag-posted-date">...</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-right">
+                        <span class="salary-tag" id="ag-job-salary">...</span>
+                        <div style="display:flex; gap:10px; align-items:center;">
+                            <span class="type-badge" id="ag-job-type">Full Time</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="container">
+            <div class="details-layout">
+
+                <!-- Left: Description -->
+                <div class="main-content">
+                    <div class="content-card">
+                        <h3>Role Overview</h3>
+                        <p id="ag-job-desc">Loading description...</p>
+                    </div>
+
+                    <div class="content-card">
+                        <h3>Key Requirements</h3>
+                        <ul class="req-list" id="ag-job-req">
+                            <!-- JS Injects LI items -->
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h3>Benefits & Perks</h3>
+                        <ul class="req-list" id="ag-job-ben">
+                            <!-- JS Injects LI items -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right: Sidebar -->
+                <div class="sidebar-content">
+
+                    <!-- Apply Box -->
+                    <div class="apply-box">
+                        <h3 style="color:white; margin-bottom:10px;">Interested?</h3>
+                        <p>Submit your profile directly to our Executive Search team.</p>
+                        <a href="agency-contact.html" class="btn btn-primary" style="width:100%; display:block;">Apply
+                            for this Role</a>
+                    </div>
+
+                    <!-- Job Summary -->
+                    <div class="info-widget">
+                        <h4 style="color:white; margin-bottom:20px; font-size:16px;">Job Summary</h4>
+                        <div class="info-row">
+                            <span class="label">Job ID</span>
+                            <span class="value">GT-2025</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Department</span>
+                            <span class="value">Executive</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Industry</span>
+                            <span class="value">Tech / SaaS</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Experience</span>
+                            <span class="value">10+ Years</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                    <p>Premium recruitment agency based in Tamil Nadu.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>info@thestackly.com</li>
+                        <li>+91 98765 43210</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center" style="margin-top:40px; border-top:1px solid #374151; padding-top:20px;">&copy; 2025
+                Stackly Agency.</p>
+        </div>
+    </footer>
+
+    <!-- Use Agency JS -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

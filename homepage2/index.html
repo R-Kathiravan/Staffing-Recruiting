@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly Agency | Executive Search</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="agency-body">
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                <nav class="main-nav">
+                    <ul>
+                        <div class="home-nav">
+                            <li class="nav-item"> <a href="index.html" class="home-btn nav-link active">Home</a></li>
+                            <span class="material-icons dropdown-icon" id="homeDropdownBtn">expand_more</span>
+                            <div class="home-select " id="homeDropdown">
+                                <li class="nav-item"> <a href="../index.html" class="nav-link">Homepage 1</a>
+                                </li>
+                            </div>
+                        </div>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <div class="btn-close"><span class="material-icons">close</span></div>
+                        <div class="mobile-login">
+                            <a href="contact.html" class="btn btn-primary">Request Talent</a>
+                        </div>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="contact.html" class="btn btn-primary">Request Talent</a>
+                </div>
+                <div class="hamburger">
+                    <span class="material-icons">menu</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ==========================
+           1. HERO SECTION (Corporate)
+        =========================== -->
+        <section class="agency-hero">
+            <div class="container">
+                <div class="agency-hero-split">
+                    <div class="agency-text">
+                        <span class="agency-tag" data-aos="fade">Premier Executive Search</span>
+                        <h1 data-aos="fade" data-aos-delay="200">Build Your <span class="highlight">Dream Team</span>
+                            with Precision.</h1>
+                        <p>We connect innovative companies with world-class engineers, C-suite executives, and product
+                            leaders in 48 hours or less.</p>
+
+                        <div class="agency-btns" data-aos="fade-up">
+                            <a href="contact.html" class="btn btn-primary btn-lg">Hire Talent</a>
+                            <a href="job-listing.html" class="btn btn-outline btn-lg">Find a Job</a>
+                        </div>
+                    </div>
+
+                    <div class="agency-visual" data-aos="fade-down">
+                        <div class="visual-box">
+                            <img src="./assets/home-hero.webp" alt="Team Meeting" class="agency-img">
+                            <div class="trust-badge">
+                                <span class="stars">★★★★★</span>
+                                <span>Trusted by 500+ Clients</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                        <h2>12+</h2>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                        <h2>8,500+</h2>
+                        <p>Placements Made</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                        <h2>98%</h2>
+                        <p>Retention Rate</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                        <h2>24h</h2>
+                        <p>Response Time</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-services" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Areas of <span class="highlight">Expertise</span></h2>
+                    <p>Specialized recruitment solutions for modern businesses.</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Card 1 -->
+                    <div class="service-card" data-aos="fade-down" data-aos-delay="100">
+                        <div class="icon-circle">🚀</div>
+                        <h3>Executive Search</h3>
+                        <p>Finding C-Level executives, VPs, and Directors to lead your organization to the next level.
+                        </p>
+                        <a href="#" class="service-link">Learn More →</a>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="service-card" data-aos="fade-down" data-aos-delay="200">
+                        <div class="icon-circle">💻</div>
+                        <h3>IT & Tech Staffing</h3>
+                        <p>Sourcing full-stack developers, data scientists, and DevOps engineers with ease.</p>
+                        <a href="#" class="service-link">Learn More →</a>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="service-card" data-aos="fade-down" data-aos-delay="300">
+                        <div class="icon-circle">👥</div>
+                        <h3>RPO Services</h3>
+                        <p>Recruitment Process Outsourcing. We take over your hiring pipeline end-to-end.</p>
+                        <a href="#" class="service-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================
+           NEW SECTION 1: OUR PROCESS
+        =========================== -->
+        <section class="section-process-dark" id="process">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How We <span class="highlight">Deliver</span></h2>
+                    <p>Our proven methodology ensures the perfect match every time.</p>
+                </div>
+
+                <div class="process-steps-dark">
+                    <div class="step-card" data-aos="fade-up">
+                        <div class="step-num">01</div>
+                        <h3>Discovery</h3>
+                        <p>We dive deep into your company culture and technical requirements.</p>
+                    </div>
+                    <div class="step-card" data-aos="fade-up">
+                        <div class="step-num">02</div>
+                        <h3>Sourcing</h3>
+                        <p>Our AI-driven search identifies the top 1% of passive candidates.</p>
+                    </div>
+                    <div class="step-card" data-aos="fade-up">
+                        <div class="step-num">03</div>
+                        <h3>Screening</h3>
+                        <p>Rigorous technical and behavioral assessments before you even see a resume.</p>
+                    </div>
+                    <div class="step-card" data-aos="fade-up">
+                        <div class="step-num">04</div>
+                        <h3>Placement</h3>
+                        <p>We handle negotiation and onboarding to ensure a smooth transition.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-testimonials-dark" id="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Success <span class="highlight">Stories</span></h2>
+                    <p>Hear from the leaders who built their teams with us.</p>
+                </div>
+
+                <div class="testi-grid-dark">
+                    <div class="testi-card-dark" data-aos="fade-down">
+                        <div class="quote-icon">“</div>
+                        <p class="testi-text">GeminiTalent found us a CTO in 3 weeks. The quality of candidates was
+                            unmatched compared to other agencies we've tried.</p>
+                        <div class="testi-author">
+                            <div class="author-img" style="background-color:#FBBF24; color:#0F172A">SJ</div>
+                            <div>
+                                <h4>Sarah Jenkins</h4>
+                                <span>CEO, TechFlow</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="testi-card-dark" data-aos="fade-down">
+                        <div class="quote-icon">“</div>
+                        <p class="testi-text">Their RPO service completely transformed our hiring pipeline. We scaled
+                            our engineering team from 10 to 50 in 6 months.</p>
+                        <div class="testi-author">
+                            <div class="author-img" style="background-color:#FBBF24; color:#0F172A">MR</div>
+                            <div>
+                                <h4>Mike Ross</h4>
+                                <span>VP of Engineering, DataCo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-featured">
+            <div class="container">
+                <div class="section-header" data-aos="fade-down">
+                    <h2>Current <span class="highlight">Opportunities</span></h2>
+                    <p>Browse the latest roles we are exclusively filling for our clients.</p>
+                </div>
+
+                <div id="job-list-container"></div>
+
+                <div class="center-btn" style="text-align:center; margin-top:40px;">
+                    <a href="careers.html" class="btn btn-primary">View All Openings</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="agency-cta" data-aos="fade">
+            <div class="container">
+                <div class="cta-inner">
+                    <h2>Ready to build your team?</h2>
+                    <p>Schedule a free consultation with our talent experts today.</p>
+                    <a href="contact.html" class="btn-outline btn-lg">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                    <p>Premium recruitment agency based in Tamil Nadu.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>info@thestackly.com</li>
+                        <li>+91 98765 43210</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center" style="margin-top:40px; border-top:1px solid #374151; padding-top:20px;">&copy; 2025
+                Stackly Agency.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, offset: 50 });
+        const homeDropdownBtn = document.getElementById("homeDropdownBtn");
+        const homeDropdown = document.getElementById("homeDropdown");
+        const icon = document.querySelector(".dropdown-icon");
+
+        homeDropdownBtn.addEventListener("click", () => {
+            homeDropdown.classList.toggle("show");
+            icon.classList.toggle("rotate");
+        });
+        document.addEventListener("click", (e) => {
+            if (!homeDropdown.contains(e.target) && !homeDropdownBtn.contains(e.target)) {
+                homeDropdown.classList.remove("show");
+                icon.classList.remove("rotate");
+            }
+        });
+    </script>
+</body>
+
+</html>

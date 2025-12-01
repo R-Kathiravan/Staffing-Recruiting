@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Stackly Agency</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Agency Contact Specifics */
+        .contact-hero {
+            padding: 80px 0 50px;
+            text-align: center;
+            background: #0F172A;
+        }
+
+        .contact-hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .contact-hero p {
+            color: #94A3B8;
+            font-size: 18px;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 60px;
+            padding: 50px 0 100px;
+        }
+
+        /* Left: Info Side */
+        .contact-info {
+            flex: 1;
+        }
+
+        .info-card {
+            background: #1E293B;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            margin-bottom: 30px;
+        }
+
+        .info-card h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 20px;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 15px;
+        }
+
+        .office-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .office-icon {
+            font-size: 24px;
+        }
+
+        .office-details h4 {
+            color: #FBBF24;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .office-details p {
+            color: #CBD5E1;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .direct-contact {
+            list-style: none;
+        }
+
+        .direct-contact li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: #CBD5E1;
+        }
+
+        .direct-contact li span {
+            color: #FBBF24;
+            font-size: 18px;
+        }
+
+        /* Right: Form Side */
+        .contact-form-wrapper {
+            flex: 1.2;
+            background: #1E293B;
+            padding: 50px;
+            border-radius: 16px;
+            border: 1px solid #334155;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-header {
+            margin-bottom: 30px;
+        }
+
+        .form-header h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            color: #94A3B8;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #CBD5E1;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            background: #0F172A;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: white;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #FBBF24;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .col-half {
+            flex: 1;
+        }
+
+        /* --- VALIDATION STYLES --- */
+        .form-control.error {
+            border-color: #EF4444;
+            /* Red */
+            background-color: rgba(239, 68, 68, 0.1);
+        }
+
+        .error-msg {
+            color: #EF4444;
+            font-size: 13px;
+            margin-top: 6px;
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="agency-body">
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                        <div class="btn-close"><span class="material-icons">close</span></div>
+                        <div class="mobile-login">
+                            <a href="contact.html" class="btn btn-primary">Request Talent</a>
+                        </div>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="contact.html" class="btn btn-primary">Request Talent</a>
+                </div>
+                <div class="hamburger">
+                    <span class="material-icons">menu</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+         <section class="contact-hero">
+            <div class="container" data-aos="zoom-in">
+                <h1>Start Your <span class="highlight">Search</span></h1>
+                <p>Tell us about your hiring needs. We'll respond within 2 hours.</p>
+            </div>
+        </section>
+
+         <section class="contact-content">
+            <div class="container">
+                <div class="contact-container">
+
+                     <div class="contact-info">
+
+                         <div class="info-card" data-aos="zoom-in" data-aos-delay="100">
+                            <h3>Direct Lines</h3>
+                            <ul class="direct-contact">
+                                <li><span>✉️</span> info@thestackly.com</li>
+                                <li><span>📞</span> +91 9876543210</li>
+                                <li><span>📞</span> +91 9123456780</li>
+                            </ul>
+                        </div>
+
+                         <div class="info-card" data-aos="zoom-in" data-aos-delay="200">
+                            <h3>Global Offices</h3>
+
+                            <div class="office-item">
+                                <span class="office-icon">SA</span>
+                                <div class="office-details">
+                                    <h4>Salem</h4>
+                                    <p> MMR Complex, Chinna Thirupathi,<br>
+                                        near Chinna Muniyappan Kovil,<br>
+                                        <i> Salem</i>,<br> Tamil Nadu 636008
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="office-item">
+                                <span class="office-icon">CHE</span>
+                                <div class="office-details">
+                                    <h4>Chennai</h4>
+                                    <p>No.9, Ambika Complex, 1st Floor,<br>
+                                        Gokulam Colony, Karanaipudhuchery main road, <br>
+                                        Urapakkam, Chennai,<br>
+                                        Tamil Nadu, India - 603202
+
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="office-item">
+                                <span class="office-icon">BEN</span>
+                                <div class="office-details">
+                                    <h4>Bengaluru</h4>
+                                    <p>Evolve Studio, 4th Floor,<br>
+                                        Khata No 10, Begur - Koppa Rd, in front of SNN Raj Serenity,<br>
+                                        Suraksha Nagar, Yelenahalli, Begur,<br>
+                                        Bengaluru, Karnataka - 560068</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: The Form -->
+                    <div class="contact-form-wrapper" data-aos="fade-up" data-aos-delay="300">
+                        <div class="form-header">
+                            <h2>Request Talent</h2>
+                            <p>Fill out the form below and a senior consultant will be in touch.</p>
+                        </div>
+
+                        <form id="agency-form" novalidate onsubmit="handleAgencyContact(event)">
+                            <div class="form-row">
+                                <div class="form-group col-half">
+                                    <label>First Name*</label>
+                                    <input type="text" id="fname" class="form-control" placeholder="Jane" required>
+                                    <div class="error-msg"></div>
+                                </div>
+                                <div class="form-group col-half">
+                                    <label>Last Name*</label>
+                                    <input type="text" id="lname" class="form-control" placeholder="Doe" required>
+                                    <div class="error-msg"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Work Email*</label>
+                                <input type="email" id="work-email" class="form-control" placeholder="jane@company.com"
+                                    required>
+                                <div class="error-msg"></div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-half">
+                                    <label>Company Name*</label>
+                                    <input type="text" id="company" class="form-control" placeholder="TechCorp Inc."
+                                        required>
+                                    <div class="error-msg"></div>
+                                </div>
+                                <div class="form-group col-half">
+                                    <label>Hiring Need</label>
+                                    <select class="form-control">
+                                        <option>Executive Search (C-Level)</option>
+                                        <option>Technical Staffing</option>
+                                        <option>RPO / High Volume</option>
+                                        <option>General Inquiry</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Message / Job Brief</label>
+                                <textarea class="form-control" id="message"
+                                    placeholder="Tell us about the role you are looking to fill..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Submit
+                                Request</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                    <p>Premium recruitment agency based in Tamil Nadu.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>info@thestackly.com</li>
+                        <li>+91 98765 43210</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center" style="margin-top:40px; border-top:1px solid #374151; padding-top:20px;">&copy; 2025
+                Stackly Agency.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function handleAgencyContact(e) {
+            e.preventDefault();
+
+            // 1. Clear previous errors
+            document.querySelectorAll('.error-msg').forEach(el => {
+                el.style.display = 'none';
+                el.innerText = '';
+            });
+            document.querySelectorAll('.form-control').forEach(el => el.classList.remove('error'));
+
+            let isValid = true;
+
+            // Helper to show error
+            const showError = (id, message) => {
+                const input = document.getElementById(id);
+                const errorDiv = input.nextElementSibling;
+                input.classList.add('error');
+                errorDiv.innerText = message;
+                errorDiv.style.display = 'block';
+                isValid = false;
+            };
+
+            // 2. Validate Fields
+            const fname = document.getElementById('fname');
+            const lname = document.getElementById('lname');
+            const email = document.getElementById('work-email');
+            const company = document.getElementById('company');
+
+            if (!fname.value.trim()) showError('fname', 'First Name is required');
+            if (!lname.value.trim()) showError('lname', 'Last Name is required');
+            if (!company.value.trim()) showError('company', 'Company Name is required');
+
+            // Email Validation
+            if (!email.value.trim()) {
+                showError('work-email', 'Work Email is required');
+            } else {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email.value.trim())) {
+                    showError('work-email', 'Please enter a valid email address');
+                }
+            }
+
+            // 3. Submit if Valid
+            if (isValid) {
+                const btn = e.target.querySelector('button');
+                const originalText = btn.innerText;
+
+                btn.innerText = "Sending Request...";
+                btn.disabled = true;
+                btn.style.opacity = "0.7";
+
+                setTimeout(() => {
+                    alert("Thank you! A consultant will contact you shortly.");
+                    btn.innerText = "Request Sent ✓";
+                    btn.style.backgroundColor = "#10B981"; // Green
+                    btn.style.color = "white";
+                    btn.style.opacity = "1";
+                    btn.disabled = false;
+                    document.getElementById('agency-form').reset();
+                }, 1500);
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, offset: 50 });
+    </script>
+</body>
+
+</html>

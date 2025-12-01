@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Opportunities | Stackly Agency</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* --- Page Specific Styles --- */
+        .careers-hero {
+            padding: 80px 0 50px;
+            background: #0F172A;
+            border-bottom: 1px solid #1E293B;
+        }
+
+        .careers-hero h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .careers-hero p {
+            color: #94A3B8;
+            font-size: 18px;
+        }
+
+        .layout-container {
+            display: flex;
+            gap: 40px;
+            padding: 60px 0;
+            align-items: flex-start;
+        }
+
+        /* Sidebar Styling (Dark Mode) */
+        .filter-sidebar {
+            flex: 1;
+            max-width: 300px;
+            background: #1E293B;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            position: sticky;
+            top: 100px;
+            /* Sticky sidebar */
+        }
+
+        .filter-group {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #334155;
+        }
+
+        .filter-group:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .filter-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Custom Checkboxes */
+        .custom-check {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            color: #CBD5E1;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .custom-check input {
+            accent-color: #FBBF24;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .custom-check:hover {
+            color: #FBBF24;
+        }
+
+        /* Search Input */
+        .sidebar-search {
+            width: 100%;
+            padding: 12px;
+            background: #0F172A;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: white;
+            outline: none;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-search:focus {
+            border-color: #FBBF24;
+        }
+
+        /* Job List Area */
+        .job-feed {
+            flex: 3;
+            min-height: 500px;
+        }
+
+        .feed-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #94A3B8;
+            font-size: 14px;
+        }
+
+        /* Empty State */
+        .no-jobs-message {
+            text-align: center;
+            padding: 60px;
+            background: #1E293B;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            color: #94A3B8;
+            display: none;
+        }
+
+        /* Load More Button */
+        .load-more-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn-load {
+            background: #1E293B;
+            color: white;
+            border: 1px solid #334155;
+            padding: 12px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-load:hover {
+            border-color: #FBBF24;
+            color: #FBBF24;
+        }
+
+        .btn-load:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            border-color: #334155;
+            color: #94A3B8;
+        }
+
+        /* Mobile */
+        @media (max-width: 900px) {
+            .layout-container {
+                flex-direction: column;
+            }
+
+            .filter-sidebar {
+                width: 100%;
+                max-width: none;
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body class="agency-body">
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="careers.html" class="active">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <div class="btn-close"><span class="material-icons">close</span></div>
+                        <div class="mobile-login">
+                            <a href="contact.html" class="btn btn-primary">Request Talent</a>
+                        </div>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="contact.html" class="btn btn-primary">Request Talent</a>
+                </div>
+                <div class="hamburger">
+                    <span class="material-icons">menu</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Page Title -->
+        <section class="careers-hero">
+            <div class="container" data-aos="fade">
+                <h1>Executive <span class="highlight">Opportunities</span></h1>
+                <p>Exclusive roles with high-growth companies and industry leaders.</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="layout-container">
+                <aside class="filter-sidebar" data-aos="fade-down">
+                    <div class="filter-group">
+                        <span class="filter-title">Search</span>
+                        <input type="text" id="search-input" class="sidebar-search" placeholder="Role, keyword...">
+                    </div>
+
+                    <div class="filter-group">
+                        <span class="filter-title">Function</span>
+                        <label class="custom-check"><input type="checkbox" name="function" value="C-Suite"> C-Suite /
+                            Executive</label>
+                        <label class="custom-check"><input type="checkbox" name="function" value="Engineering">
+                            Engineering (VP/Dir)</label>
+                        <label class="custom-check"><input type="checkbox" name="function" value="Product"> Product
+                            Management</label>
+                        <label class="custom-check"><input type="checkbox" name="function" value="Finance"> Finance &
+                            Ops</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <span class="filter-title">Location</span>
+                        <!-- Added 'value' attributes for JS filtering -->
+                        <label class="custom-check"><input type="checkbox" name="location" value="Remote"> Remote
+                            (Global)</label>
+                        <label class="custom-check"><input type="checkbox" name="location" value="New York"> New
+                            York</label>
+                        <label class="custom-check"><input type="checkbox" name="location" value="London">
+                            London</label>
+                        <label class="custom-check"><input type="checkbox" name="location" value="Bengaluru">
+                            Bengaluru</label>
+                    </div>
+
+                    <button class="btn btn-primary" id="btn-reset" style="width:100%; margin-top:10px;">Reset
+                        Filters</button>
+                </aside>
+
+                <div class="job-feed">
+                    <div class="feed-header">
+                        <span id="job-count-label">Loading roles...</span>
+                        <span>Sort by: <strong>Newest</strong></span>
+                    </div>
+
+                    <div id="job-list-container"></div>
+
+                    <div id="no-jobs" class="no-jobs-message">
+                        <h3>No matches found</h3>
+                        <p>Try adjusting your search filters or keyword.</p>
+                    </div>
+
+                    <div class="load-more-container">
+                        <button id="btn-load-more" class="btn-load">Load More Opportunities</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html"> <img src="./assets/stackly-logo.webp" alt="Stackly Logo" class="logo"></a>
+                    <p>Premium recruitment agency based in Tamil Nadu.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>info@thestackly.com</li>
+                        <li>+91 98765 43210</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center" style="margin-top:40px; border-top:1px solid #374151; padding-top:20px;">&copy; 2025
+                Stackly Agency.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, offset: 50 });
+    </script>
+    <script>
+        const allJobs = [
+            { id: 201, title: "Chief Technology Officer (CTO)", company: "FinTech Unicorn", location: "New York", type: "Retained", salary: "$350k + Equity", posted: "2 days ago", function: "C-Suite", logo: "F" },
+            { id: 202, title: "VP of Engineering", company: "HealthCare AI", location: "Remote", type: "Full Time", salary: "$250k - $300k", posted: "3 days ago", function: "Engineering", logo: "H" },
+            { id: 203, title: "Director of Product", company: "Global Logistics", location: "London", type: "Contract", salary: "£140k", posted: "5 days ago", function: "Product", logo: "G" },
+            { id: 204, title: "Head of AI Research", company: "DeepTech Labs", location: "Bengaluru", type: "Full Time", salary: "₹80 LPA", posted: "1 week ago", function: "Engineering", logo: "D" },
+            { id: 205, title: "Chief Financial Officer", company: "SaaS Scale-up", location: "Remote", type: "Retained", salary: "$300k Base", posted: "1 week ago", function: "C-Suite", logo: "S" },
+            { id: 206, title: "VP of Sales", company: "Enterprise Cloud", location: "New York", type: "Full Time", salary: "$400k OTE", posted: "2 weeks ago", function: "Sales", logo: "E" },
+            { id: 207, title: "Senior Product Lead", company: "Consumer App", location: "London", type: "Full Time", salary: "£110k", posted: "2 weeks ago", function: "Product", logo: "C" },
+            { id: 208, title: "Principal Architect", company: "Banking Giant", location: "Bengaluru", type: "Full Time", salary: "₹65 LPA", posted: "3 weeks ago", function: "Engineering", logo: "B" },
+            { id: 209, title: "Head of Operations", company: "Logistics Co", location: "Remote", type: "Full Time", salary: "$180k", posted: "3 weeks ago", function: "Finance", logo: "L" },
+            { id: 210, title: "VP of Marketing", company: "EdTech", location: "London", type: "Retained", salary: "£130k", posted: "1 month ago", function: "Marketing", logo: "E" }
+        ];
+
+        let currentJobs = [];
+        let displayedCount = 0;
+        const itemsPerPage = 4;
+
+        // 3. INITIALIZATION
+        document.addEventListener("DOMContentLoaded", () => {
+            currentJobs = allJobs; // Start with all jobs
+            filterJobs(); // Initial render
+
+            // Event Listeners
+            document.getElementById('search-input').addEventListener('input', filterJobs);
+            document.getElementById('btn-load-more').addEventListener('click', loadMore);
+            document.getElementById('btn-reset').addEventListener('click', resetFilters);
+
+            // Checkbox Listeners
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(box => {
+                box.addEventListener('change', filterJobs);
+            });
+        });
+
+        // 4. FILTER FUNCTION
+        function filterJobs() {
+            // Get Search Term
+            const keyword = document.getElementById('search-input').value.toLowerCase();
+
+            // Get Selected Functions
+            const selectedFunctions = Array.from(document.querySelectorAll('input[name="function"]:checked')).map(cb => cb.value);
+
+            // Get Selected Locations
+            const selectedLocations = Array.from(document.querySelectorAll('input[name="location"]:checked')).map(cb => cb.value);
+
+            // Logic
+            currentJobs = allJobs.filter(job => {
+                const matchKeyword = job.title.toLowerCase().includes(keyword) || job.company.toLowerCase().includes(keyword);
+
+                const matchFunction = selectedFunctions.length === 0 || selectedFunctions.includes(job.function);
+
+                // Location Logic (Simple "includes" check)
+                const matchLocation = selectedLocations.length === 0 || selectedLocations.some(loc => job.location.includes(loc));
+
+                return matchKeyword && matchFunction && matchLocation;
+            });
+
+            // Reset Display
+            displayedCount = 0;
+            document.getElementById('job-list-container').innerHTML = '';
+
+            // Update UI State
+            if (currentJobs.length === 0) {
+                document.getElementById('no-jobs').style.display = 'block';
+                document.getElementById('btn-load-more').style.display = 'none';
+                document.getElementById('job-count-label').innerText = `Showing 0 active roles`;
+            } else {
+                document.getElementById('no-jobs').style.display = 'none';
+                loadMore(); // Load first batch
+            }
+        }
+
+        // 5. LOAD MORE / RENDER FUNCTION
+        function loadMore() {
+            const container = document.getElementById('job-list-container');
+            const nextBatch = currentJobs.slice(displayedCount, displayedCount + itemsPerPage);
+
+            if (nextBatch.length > 0) {
+                nextBatch.forEach(job => {
+                    const html = `
+                        <div class="job-card" onclick="window.location.href='job-detail.html?id=${job.id}'" data-aos='fade-up'>
+                            <div class="job-card-left">
+                                <div class="company-logo">${job.logo}</div>
+                                <div class="job-info">
+                                    <span class="job-title">${job.title}</span>
+                                    <span class="company-name">${job.company}</span>
+                                    <div class="job-meta">
+                                        <span>📍 ${job.location}</span>
+                                        <span>💰 ${job.salary}</span>
+                                        <span>⏰ ${job.posted}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="job-card-right">
+                                <span class="badge">${job.type}</span>
+                                <button class="btn-save" onclick="event.stopPropagation()">♡</button>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += html;
+                });
+
+                displayedCount += nextBatch.length;
+
+                // Update Label
+                document.getElementById('job-count-label').innerText = `Showing ${displayedCount} of ${currentJobs.length} active roles`;
+            }
+
+            // Hide/Disable Load More button if no more jobs
+            const btn = document.getElementById('btn-load-more');
+            if (displayedCount >= currentJobs.length) {
+                btn.style.display = 'none';
+            } else {
+                btn.style.display = 'inline-block';
+            }
+        }
+
+        // 6. RESET FILTERS
+        function resetFilters() {
+            document.getElementById('search-input').value = '';
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(box => box.checked = false);
+            filterJobs();
+        }
+    </script>
+
+</body>
+
+</html>
