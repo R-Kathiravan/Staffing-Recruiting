@@ -176,15 +176,12 @@
     <script src="script.js"></script>
     <script>
         function toggleAuthMode(mode) {
-            // 1. Toggle Tabs
             document.getElementById('tab-login').classList.toggle('active', mode === 'login');
             document.getElementById('tab-register').classList.toggle('active', mode === 'register');
 
-            // 2. Toggle Forms
             document.getElementById('login-form').style.display = (mode === 'login') ? 'block' : 'none';
             document.getElementById('register-form').style.display = (mode === 'register') ? 'block' : 'none';
 
-            // 3. Update Text
             if (mode === 'login') {
                 document.getElementById('auth-title').innerText = "Welcome Back";
                 document.getElementById('auth-desc').innerText = "Login to manage your career.";
@@ -194,14 +191,10 @@
             }
         }
 
-        // Initialize view
         toggleAuthMode('login');
 
-        /* ==========================
-   HELPER: SHOW ERROR
-=========================== */
         function showError(input, message) {
-            const errorDiv = input.nextElementSibling; // The div below the input
+            const errorDiv = input.nextElementSibling;
             if (errorDiv && errorDiv.classList.contains('error-msg')) {
                 input.classList.add('error');
                 errorDiv.innerText = message;
@@ -209,9 +202,6 @@
             }
         }
 
-        /* ==========================
-           HELPER: CLEAR ERRORS
-        =========================== */
         function clearErrors(formId) {
             const form = document.getElementById(formId);
             const inputs = form.querySelectorAll('input');
@@ -224,16 +214,10 @@
             });
         }
 
-        /* ==========================
-           HELPER: EMAIL VALIDATION REGEX
-        =========================== */
         function isValidEmail(email) {
             return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
         }
 
-        /* ==========================
-           1. HANDLE LOGIN
-        =========================== */
         function handleLogin(e) {
             e.preventDefault();
             clearErrors('login-form');
@@ -242,7 +226,6 @@
             const passInput = document.getElementById('login-pass');
             let isValid = true;
 
-            // Check Email
             if (!emailInput.value.trim()) {
                 showError(emailInput, "Email is required");
                 isValid = false;
@@ -251,7 +234,6 @@
                 isValid = false;
             }
 
-            // Check Password
             if (!passInput.value.trim()) {
                 showError(passInput, "Password is required");
                 isValid = false;
@@ -270,10 +252,6 @@
                 }, 1500);
             }
         }
-
-        /* ==========================
-           2. HANDLE REGISTER
-        =========================== */
         function handleRegister(e) {
             e.preventDefault();
             clearErrors('register-form');
@@ -284,25 +262,21 @@
             const confirmInput = document.getElementById('reg-confirm');
             let isValid = true;
 
-            // Check Name
             if (nameInput.value.trim().length < 3) {
                 showError(nameInput, "Full name must be at least 3 characters");
                 isValid = false;
             }
 
-            // Check Email
             if (!isValidEmail(emailInput.value)) {
                 showError(emailInput, "Please enter a valid email address");
                 isValid = false;
             }
 
-            // Check Password Length
             if (passInput.value.length < 6) {
                 showError(passInput, "Password must be at least 6 characters");
                 isValid = false;
             }
 
-            // Check Password Match
             if (passInput.value !== confirmInput.value) {
                 showError(confirmInput, "Passwords do not match");
                 isValid = false;

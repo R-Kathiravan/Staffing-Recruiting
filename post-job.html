@@ -228,9 +228,8 @@
     <script src="script.js"></script>
     <script>
         function handlePostJob(event) {
-            event.preventDefault(); // Stop form submission
+            event.preventDefault();
 
-            // 1. Clear previous errors
             document.querySelectorAll('.error-msg').forEach(el => {
                 el.style.display = 'none';
                 el.innerText = '';
@@ -239,10 +238,9 @@
 
             let isValid = true;
 
-            // --- Helper Function to show error ---
             const showError = (id, message) => {
                 const input = document.getElementById(id);
-                const errorDiv = input.nextElementSibling; // The <div class="error-msg">
+                const errorDiv = input.nextElementSibling;
 
                 input.classList.add('error');
                 if (errorDiv && errorDiv.classList.contains('error-msg')) {
@@ -252,9 +250,6 @@
                 isValid = false;
             };
 
-            // --- VALIDATION RULES ---
-
-            // 1. Required Text Fields
             const requiredFields = [
                 { id: 'job-title', msg: 'Job Title is required.' },
                 { id: 'job-desc', msg: 'Description is required.' },
@@ -269,19 +264,17 @@
                 }
             });
 
-            // 2. Date Validation (Must be future date)
             const dateInput = document.getElementById('deadline');
             if (dateInput.value) {
                 const selectedDate = new Date(dateInput.value);
                 const today = new Date();
-                today.setHours(0, 0, 0, 0); // Ignore time part
+                today.setHours(0, 0, 0, 0);
 
                 if (selectedDate < today) {
                     showError('deadline', 'Deadline cannot be in the past.');
                 }
             }
 
-            // 3. Salary Validation (Min cannot be greater than Max)
             const minSalary = document.getElementById('salary-min').value;
             const maxSalary = document.getElementById('salary-max').value;
 
@@ -291,17 +284,14 @@
                 }
             }
 
-            // 4. URL Validation
             const website = document.getElementById('company-website');
             if (website.value) {
-                // Simple regex for URL
                 const urlPattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
                 if (!urlPattern.test(website.value)) {
                     showError('company-website', 'Please enter a valid URL (e.g. https://example.com)');
                 }
             }
 
-            // 5. File Validation (Size & Type)
             const fileInput = document.getElementById('logo-upload');
             const fileError = document.getElementById('file-error');
             const fileBox = document.querySelector('.file-upload-box');
@@ -324,19 +314,16 @@
                 }
             }
 
-            // --- FINAL CHECK ---
             if (isValid) {
                 const btn = document.querySelector('button[type="submit"]');
                 btn.innerText = "Posting...";
                 btn.disabled = true;
 
-                // Simulate API call
                 setTimeout(() => {
                     alert("Success! Job has been validated and posted.");
-                    window.location.href = "404page.html"; // Redirect
+                    window.location.href = "404page.html";
                 }, 1500);
             } else {
-                // Scroll to the first error
                 const firstError = document.querySelector('.error');
                 if (firstError) {
                     firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });

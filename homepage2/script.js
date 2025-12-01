@@ -1,7 +1,4 @@
-/* ==========================
-   AGENCY DATA
-   (Shared between Listings and Details)
-=========================== */
+
 const agencyJobs = [
     {
         id: 201,
@@ -89,27 +86,19 @@ const agencyJobs = [
     }
 ];
 
-/* ==========================
-   RENDER FUNCTION (For Careers Page)
-=========================== */
-// This function allows agency-careers.html to use this shared data
 function getAgencyJobs() {
     return agencyJobs;
 }
 
-/* ==========================
-   DETAILS PAGE LOGIC
-=========================== */
 function loadAgencyJobDetails() {
     const titleEl = document.getElementById('ag-job-title');
-    if (!titleEl) return; // Not on details page
+    if (!titleEl) return;
 
     const urlParams = new URLSearchParams(window.location.search);
     const jobId = urlParams.get('id');
     const job = agencyJobs.find(j => j.id == jobId);
 
     if (job) {
-        // Hero Data
         document.getElementById('ag-job-title').innerText = job.title;
         document.getElementById('ag-job-company').innerText = job.company;
         document.getElementById('ag-job-location').innerText = job.location;
@@ -139,15 +128,9 @@ function loadAgencyJobDetails() {
     }
 }
 
-/* ==========================
-   INIT
-=========================== */
 document.addEventListener("DOMContentLoaded", () => {
     loadAgencyJobDetails();
 });
-/* ==========================
-   RENDER FUNCTION
-=========================== */
 function renderAgencyJobs() {
     const container = document.getElementById('job-list-container');
     if (!container) return;
@@ -179,35 +162,24 @@ function renderAgencyJobs() {
     container.innerHTML = html;
 }
 
-/* ==========================
-   INITIALIZATION
-=========================== */
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Agency Theme Loaded");
     renderAgencyJobs();
 });
 
-/* ==========================
-   RENDER FUNCTION (For Careers Page)
-=========================== */
-// This function allows agency-careers.html to use this shared data
 function getAgencyJobs() {
     return agencyJobs;
 }
 
-/* ==========================
-   DETAILS PAGE LOGIC
-=========================== */
 function loadAgencyJobDetails() {
     const titleEl = document.getElementById('ag-job-title');
-    if (!titleEl) return; // Not on details page
+    if (!titleEl) return;
 
     const urlParams = new URLSearchParams(window.location.search);
     const jobId = urlParams.get('id');
     const job = agencyJobs.find(j => j.id == jobId);
 
     if (job) {
-        // Hero Data
         document.getElementById('ag-job-title').innerText = job.title;
         document.getElementById('ag-job-company').innerText = job.company;
         document.getElementById('ag-job-location').innerText = job.location;
@@ -216,17 +188,14 @@ function loadAgencyJobDetails() {
         document.getElementById('ag-posted-date').innerText = job.posted;
         document.getElementById('ag-job-logo').innerText = job.logo;
 
-        // Content
         document.getElementById('ag-job-desc').innerText = job.description;
 
-        // Requirements
         const reqList = document.getElementById('ag-job-req');
         reqList.innerHTML = '';
         job.requirements.forEach(req => {
             reqList.innerHTML += `<li>${req}</li>`;
         });
 
-        // Benefits
         const benList = document.getElementById('ag-job-ben');
         benList.innerHTML = '';
         job.benefits.forEach(ben => {
@@ -237,9 +206,6 @@ function loadAgencyJobDetails() {
     }
 }
 
-/* ==========================
-   INIT
-=========================== */
 document.addEventListener("DOMContentLoaded", () => {
     loadAgencyJobDetails();
 });

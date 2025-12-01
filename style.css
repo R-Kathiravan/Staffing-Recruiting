@@ -33,7 +33,6 @@ ul {
     list-style: none;
 }
 
-/* Utility Classes */
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
@@ -44,7 +43,6 @@ ul {
     color: var(--primary-color);
 }
 
-/* Buttons */
 .btn {
     padding: 10px 24px;
     border-radius: var(--radius);
@@ -76,7 +74,6 @@ ul {
     height: var(--header-height);
     background: var(--white);
     border-bottom: 1px solid #E5E7EB;
-    /* display: flex; */
     align-items: center;
     position: sticky;
     top: 0;
@@ -340,13 +337,11 @@ ul {
 
 .inner-hero-section {
     background-color: #111827;
-    /* Dark Navy/Black */
     padding: 80px 0 100px;
     position: relative;
     text-align: center;
     color: white;
-    /* Optional: Add a background image here */
-    /* background-image: url('../assets/images/pattern.png'); */
+
 }
 
 .inner-hero-content h1 {
@@ -381,7 +376,6 @@ ul {
     padding: 80px 0;
     position: relative;
     overflow: hidden;
-    /* Prevents decorative elements from scrolling */
 }
 
 .hero-split {
@@ -390,9 +384,7 @@ ul {
     gap: 60px;
 }
 
-/* LEFT SIDE */
 .hero-left {
-    /* flex: 1; */
     max-width: 600px;
 }
 
@@ -430,7 +422,6 @@ ul {
     box-shadow: 20px 20px 0px rgba(37, 99, 235, 0.1);
 }
 
-/* Floating Badges */
 .floating-card {
     position: absolute;
     background: white;
@@ -594,7 +585,6 @@ ul {
     user-select: none;
 }
 
-/* Trending Tags */
 .trending-tags {
     margin-top: 20px;
     font-size: 14px;
@@ -611,9 +601,6 @@ ul {
     color: var(--primary-color);
 }
 
-/* ==========================
-   SHARED SECTIONS
-=========================== */
 section {
     padding: 80px 0;
 }
@@ -632,13 +619,9 @@ section {
     color: var(--text-gray);
 }
 
-/* ==========================
-   CATEGORY GRID
-=========================== */
 .category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    /* 4 Columns */
     gap: 30px;
 }
 
@@ -675,9 +658,6 @@ section {
     font-size: 14px;
 }
 
-/* ==========================
-   HOW IT WORKS (PROCESS)
-=========================== */
 .section-process {
     background: #F9FAFB;
 }
@@ -718,18 +698,13 @@ section {
     z-index: 2;
 }
 
-/* The connecting line between steps */
 .step-connector {
     flex-grow: 1;
     height: 2px;
     background: #E5E7EB;
     margin-top: 30px;
-    /* Align with center of circle */
 }
 
-/* ==========================
-   TESTIMONIALS
-=========================== */
 .section-testimonials {
     background: white;
 }
@@ -784,23 +759,18 @@ section {
     color: var(--text-gray);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .testimonial-grid {
         grid-template-columns: 1fr;
     }
 }
 
-/* ==========================
-   CTA BANNER
-=========================== */
 .section-cta .container {
     max-width: 1000px;
 }
 
 .cta-box {
     background: var(--primary-dark);
-    /* Dark Blue */
     color: white;
     padding: 60px;
     border-radius: 20px;
@@ -831,12 +801,9 @@ section {
     background: #f0f0f0;
 }
 
-/* ==========================
-   FOOTER
-=========================== */
+
 .site-footer {
     background: #111827;
-    /* Almost Black */
     color: #9CA3AF;
     padding: 80px 0 30px;
 }
@@ -881,24 +848,15 @@ section {
     font-size: 14px;
 }
 
-
-/* ==========================
-   FEATURED JOBS SECTION
-=========================== */
-
-/* The Container for the list */
 #job-list-container {
     max-width: 1000px;
-    /* Narrower than full width for readability */
     margin: 50px auto;
     padding: 0 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* Space between cards */
 }
 
-/* The Individual Job Card */
 .job-card {
     background: var(--white);
     border: 1px solid #E5E7EB;
@@ -917,7 +875,6 @@ section {
     transform: translateY(-2px);
 }
 
-/* Left Side: Logo + Text */
 .job-card-left {
     display: flex;
     gap: 20px;
@@ -966,7 +923,6 @@ section {
     color: var(--text-gray);
 }
 
-/* Right Side: Badge + Save */
 .job-card-right {
     display: flex;
     flex-direction: column;
@@ -996,9 +952,6 @@ section {
     }
 }
 
-/* Red heart on hover */
-
-/* Badge Styling (Dynamic Classes) */
 .badge {
     padding: 6px 12px;
     border-radius: 20px;
@@ -1011,16 +964,12 @@ section {
     color: #1E40AF;
 }
 
-/* Blue */
 .badge.part-time {
     background: #FEF3C7;
     color: #92400E;
 }
 
-/* Orange */
 .badge.contract {
     background: #E0E7FF;
     color: #3730A3;
 }
-
-/* Indigo */

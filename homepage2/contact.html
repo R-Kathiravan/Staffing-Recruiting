@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* Agency Contact Specifics */
         .contact-hero {
             padding: 80px 0 50px;
             text-align: center;
@@ -34,7 +33,6 @@
             padding: 50px 0 100px;
         }
 
-        /* Left: Info Side */
         .contact-info {
             flex: 1;
         }
@@ -95,7 +93,6 @@
             font-size: 18px;
         }
 
-        /* Right: Form Side */
         .contact-form-wrapper {
             flex: 1.2;
             background: #1E293B;
@@ -160,10 +157,8 @@
             flex: 1;
         }
 
-        /* --- VALIDATION STYLES --- */
         .form-control.error {
             border-color: #EF4444;
-            /* Red */
             background-color: rgba(239, 68, 68, 0.1);
         }
 
@@ -174,7 +169,6 @@
             display: none;
         }
 
-        /* Responsive */
         @media (max-width: 900px) {
             .contact-container {
                 flex-direction: column;
@@ -219,20 +213,20 @@
 
     <main>
 
-         <section class="contact-hero">
+        <section class="contact-hero">
             <div class="container" data-aos="zoom-in">
                 <h1>Start Your <span class="highlight">Search</span></h1>
                 <p>Tell us about your hiring needs. We'll respond within 2 hours.</p>
             </div>
         </section>
 
-         <section class="contact-content">
+        <section class="contact-content">
             <div class="container">
                 <div class="contact-container">
 
-                     <div class="contact-info">
+                    <div class="contact-info">
 
-                         <div class="info-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="info-card" data-aos="zoom-in" data-aos-delay="100">
                             <h3>Direct Lines</h3>
                             <ul class="direct-contact">
                                 <li><span>✉️</span> info@thestackly.com</li>
@@ -241,7 +235,7 @@
                             </ul>
                         </div>
 
-                         <div class="info-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="info-card" data-aos="zoom-in" data-aos-delay="200">
                             <h3>Global Offices</h3>
 
                             <div class="office-item">
@@ -282,7 +276,6 @@
                         </div>
                     </div>
 
-                    <!-- RIGHT: The Form -->
                     <div class="contact-form-wrapper" data-aos="fade-up" data-aos-delay="300">
                         <div class="form-header">
                             <h2>Request Talent</h2>
@@ -345,7 +338,6 @@
 
     </main>
 
-
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
@@ -381,7 +373,6 @@
         function handleAgencyContact(e) {
             e.preventDefault();
 
-            // 1. Clear previous errors
             document.querySelectorAll('.error-msg').forEach(el => {
                 el.style.display = 'none';
                 el.innerText = '';
@@ -390,7 +381,6 @@
 
             let isValid = true;
 
-            // Helper to show error
             const showError = (id, message) => {
                 const input = document.getElementById(id);
                 const errorDiv = input.nextElementSibling;
@@ -400,7 +390,6 @@
                 isValid = false;
             };
 
-            // 2. Validate Fields
             const fname = document.getElementById('fname');
             const lname = document.getElementById('lname');
             const email = document.getElementById('work-email');
@@ -410,7 +399,6 @@
             if (!lname.value.trim()) showError('lname', 'Last Name is required');
             if (!company.value.trim()) showError('company', 'Company Name is required');
 
-            // Email Validation
             if (!email.value.trim()) {
                 showError('work-email', 'Work Email is required');
             } else {
@@ -420,7 +408,6 @@
                 }
             }
 
-            // 3. Submit if Valid
             if (isValid) {
                 const btn = e.target.querySelector('button');
                 const originalText = btn.innerText;
